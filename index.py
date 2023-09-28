@@ -352,4 +352,13 @@ def is_even(num):
 
 print(partition([1,2,3,4], is_even)) # [[2,4],[1,3]]    
 
+
+
+def intersection(first_l,second_l):
+    set_1 = set(first_l)
+    set_2 = set(second_l)
+    return list(set_1.intersection(set_2))
+
+#print(intersection(['f','i','r','s','t_','l'],['s','ec','ond_','l']))
+print(intersection([1,2,3], [2,3,4])) 
 """
