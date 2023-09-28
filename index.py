@@ -327,7 +327,6 @@ def compact(l):
 
 
 def compact(l):
-    #return [item if item else 0 for item in l]
     return [item for item in l if item]
 
 
@@ -340,11 +339,11 @@ def partition(l,func):
     result = [true_l, false_l]
 
     for item in l:
-        if is_even(item):
+        if func(item):
             true_l.append(item)
         else:
             false_l.append(item)
-    return result       
+    return result        
                 
 
 def is_even(num):
@@ -359,6 +358,30 @@ def intersection(first_l,second_l):
     set_2 = set(second_l)
     return list(set_1.intersection(set_2))
 
+def intersection(l1, l2):
+    return [val for val in l1 if val in l2]
+
 #print(intersection(['f','i','r','s','t_','l'],['s','ec','ond_','l']))
 print(intersection([1,2,3], [2,3,4])) 
 """
+
+def once(func):
+    
+    def new_func(*args):
+        if new_func.x >= 1:
+            return None
+        else: 
+            new_func.x += 1
+            return func(*args)
+    new_func.x = 0
+    return new_func
+
+
+def add(a,b):
+    return a + b
+
+one_addition = once(add)
+
+print(one_addition(2,2)) # 4
+print(one_addition(2,2)) # undefined
+print(one_addition(12,200)) # undefined
