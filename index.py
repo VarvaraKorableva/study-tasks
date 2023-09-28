@@ -311,10 +311,45 @@ def multiply_even_numbers(array):
     return prod([newArr * item if item % 2 == 0 else 1 for item in array])
 
 print(multiply_even_numbers([2,3,4,5,6,5,2,6]))    
-"""
+
 import math
 def capitalize(some_string):
     return some_string.capitalize()
-print (capitalize('some_string'))
 
-print(math.prod([3, 4]))
+print (capitalize('fgjhjk'))
+
+def compact(l):
+    new_list = []
+    for item in l:
+        if item:
+            new_list.append(item)
+    return new_list
+
+
+def compact(l):
+    #return [item if item else 0 for item in l]
+    return [item for item in l if item]
+
+
+print(compact([0,1,2,"",[], False, {}, None, "All done"]))
+
+def partition(l,func):
+    true_l = []
+    false_l = []
+
+    result = [true_l, false_l]
+
+    for item in l:
+        if is_even(item):
+            true_l.append(item)
+        else:
+            false_l.append(item)
+    return result       
+                
+
+def is_even(num):
+    return num % 2 == 0
+
+print(partition([1,2,3,4], is_even)) # [[2,4],[1,3]]    
+
+"""
